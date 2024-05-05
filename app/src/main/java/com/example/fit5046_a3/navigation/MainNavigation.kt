@@ -12,9 +12,19 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.fit5046_a3.screens.Profile
 import com.example.fit5046_a3.screens.About
+import com.example.fit5046_a3.screens.Counter
 import com.example.fit5046_a3.screens.Home
+import com.example.fit5046_a3.screens.Login
+import com.example.fit5046_a3.screens.LogWorkout
+import com.example.fit5046_a3.screens.Profile
+import com.example.fit5046_a3.screens.SignUp
+import com.example.fit5046_a3.screens.Statistics
+import com.example.fit5046_a3.screens.ViewWorkouts
+import com.example.fit5046_a3.screens.WorkoutMap
+
+
+
 import kotlinx.coroutines.launch
 @Composable
 fun MainNavigation (navViewModel: NavigationViewModel) {
@@ -47,6 +57,27 @@ fun MainNavigation (navViewModel: NavigationViewModel) {
             }
             composable(Routes.About.value) {
                 About(drawerState)
+            }
+            composable(Routes.ViewWorkouts.value) {
+                ViewWorkouts(drawerState)
+            }
+            composable(Routes.LogWorkout.value) {
+                LogWorkout(drawerState)
+            }
+            composable(Routes.WorkoutMap.value) {
+                WorkoutMap(drawerState)
+            }
+            composable(Routes.Counter.value) {
+                Counter(drawerState)
+            }
+            composable(Routes.Statistics.value) {
+                Statistics(drawerState)
+            }
+            composable(Routes.SignUp.value) {
+                SignUp(drawerState)
+            }
+            composable(Routes.Login.value) {
+                Login(drawerState)
             }
         }
     }
