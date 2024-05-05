@@ -13,3 +13,25 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Gradle files
+.gradle/
+
+# IntelliJ IDEA files
+.idea/
+
+# Local configuration file
+local.properties
+
+# Build output
+build/
+out/
+
+# Mac OS X clutter
+.DS_Store
+
+# Windows clutter
+Thumbs.db
+
+# User-specific Gradle cache
+*.lock
