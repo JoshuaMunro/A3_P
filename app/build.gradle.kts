@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -55,6 +56,15 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
+
+    implementation(libs.androidx.activity.compose)
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation ("androidx.compose.runtime:runtime-livedata:1.6.7")
+    ksp("androidx.room:room-compiler:2.6.1")
+
     implementation(libs.androidx.material3)
     implementation ("androidx.navigation:navigation-compose:2.7.7")
     testImplementation(libs.junit)

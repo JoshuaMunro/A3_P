@@ -1,5 +1,6 @@
 package com.example.fit5046_a3.navigation
 
+
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
@@ -15,19 +16,18 @@ import androidx.navigation.compose.rememberNavController
 import com.example.fit5046_a3.screens.About
 import com.example.fit5046_a3.screens.Counter
 import com.example.fit5046_a3.screens.Home
-import com.example.fit5046_a3.screens.Login
 import com.example.fit5046_a3.screens.LogWorkout
+import com.example.fit5046_a3.screens.Login
 import com.example.fit5046_a3.screens.Profile
 import com.example.fit5046_a3.screens.SignUp
 import com.example.fit5046_a3.screens.Statistics
 import com.example.fit5046_a3.screens.ViewWorkouts
 import com.example.fit5046_a3.screens.WorkoutMap
-
-
-
+import com.example.fit5046_a3.viewmodel.UserViewModel
 import kotlinx.coroutines.launch
+
 @Composable
-fun MainNavigation (navViewModel: NavigationViewModel) {
+fun MainNavigation (navViewModel: NavigationViewModel, userViewModel: UserViewModel) {
     val navController = rememberNavController()
     val coroutineScope = rememberCoroutineScope()
     val drawerState = rememberDrawerState(initialValue =
@@ -53,7 +53,7 @@ fun MainNavigation (navViewModel: NavigationViewModel) {
                 Home(drawerState, navViewModel)
             }
             composable(Routes.Profile.value) {
-                Profile(drawerState, navViewModel)
+                Profile(drawerState, navViewModel, userViewModel)
             }
             composable(Routes.About.value) {
                 About(drawerState)
